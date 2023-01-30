@@ -4,17 +4,17 @@ import { task } from '@prisma/client';
 
 @Injectable()
 export class TaskService {
-  constructor( private baseRepo: RepositoryService<task>) {}
+  constructor( private taskRepo: RepositoryService<task>) {}
   async createTask() {
     const data: any = {
       title: 'prisma check',
       status: 'pending',
     };
-    const da=await this.baseRepo.create('task', data);
+    const da=await this.taskRepo.create('task', data);
     return da
   }
   async findTask(){
-      const data=await this.baseRepo.findAll('task');
+      const data=await this.taskRepo.findAll('task');
       return data
   }
 }
