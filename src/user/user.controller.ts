@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 
-@Controller('task')
+@Controller('user')
 export class UserController {
   constructor(private readonly taskService: UserService) {}
   @Post('')
